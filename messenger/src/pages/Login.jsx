@@ -5,10 +5,19 @@ import { useNavigate } from "react-router-dom";
 function Login() {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-	const handleFormSubmit = (e) => {
+	const { user, logIn } = UserAuth();
+	const navigate = useNavigate();
+
+	const handleFormSubmit = async (e) => {
 		e.preventDefault();
 		console.log(email);
 		console.log(password);
+		try {
+			await logIn(email, password);
+			navigate("/");
+		} catch (err) {
+			console.log(err);
+		}
 	};
 	return (
 		<>

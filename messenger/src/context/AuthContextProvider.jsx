@@ -1,7 +1,7 @@
 import { createContext, useEffect } from "react";
 import { useContext } from "react";
 import { useState } from "react";
-import firebase from "firebase/compat/app";
+
 import {
 	createUserWithEmailAndPassword,
 	signInWithEmailAndPassword,
